@@ -13,6 +13,8 @@ public class Fader implements SeekBar.OnSeekBarChangeListener{
     SeekBar barFader;
     String nomeFader;
 
+
+
     private static final int MINVALUE = 0;
     private static final int MAXVALUE = 255;
 
@@ -21,6 +23,7 @@ public class Fader implements SeekBar.OnSeekBarChangeListener{
         this.valFader = valFader;
         this.nomeFader = nomeFader;
     }
+
 
 
     public int getNumFader() {
@@ -40,21 +43,40 @@ public class Fader implements SeekBar.OnSeekBarChangeListener{
         return barFader.getProgress();
     }
 
+
+
     @Override
     public void onProgressChanged(SeekBar seekBar, int valore, boolean b){
         Log.v("","" + seekBar);
         this.valFader = (valore);
     }
 
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {    }
 
     @Override
-    public void onStartTrackingTouch(SeekBar seekBar) {
+    public void onStopTrackingTouch(SeekBar seekBar) {    }
 
-    }
 
-    @Override
-    public void onStopTrackingTouch(SeekBar seekBar) {
 
-    }
 
+/*    // gestisco il cambio di valore della Seekbar
+    public void setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        //@Override
+        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            if(fromUser){
+                updateValue(seekBar.getProgress());
+            }
+        }
+
+        //@Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+
+        }
+
+        //@Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+            updateValue(seekBar.getProgress());
+        }
+    });*/
 }

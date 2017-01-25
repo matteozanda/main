@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_single_channels"
     android:layout_width="match_parent"
@@ -12,8 +13,144 @@
     android:orientation="vertical">
 
 
-    <ListView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:text="SINGLE CHANNEL MODE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:layout_weight="1"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:layout_width="37dp"
+            android:layout_height="43dp"
+            android:id="@+id/btnSingleMenu"
+            android:background="@android:color/transparent"
+            android:elevation="0dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@android:drawable/ic_input_get" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listaFader" />
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="60dp"
+            android:weightSum="1"
+            android:layout_weight="0.57"
+            android:orientation="vertical"
+            android:baselineAligned="false"
+            android:visibility="invisible">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="257dp"
+                android:rotation="270">
+
+                <TextView
+                    android:text=" 1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/numFader1"
+                    android:layout_gravity="center_vertical" />
+
+                <SeekBar
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fader1"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_width="230dp"
+                    android:layout_gravity="bottom" />
+
+                <TextView
+                    android:text="  0%"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/valFader1"
+                    android:layout_gravity="center_vertical" />
+            </TableRow>
+
+            <SeekBar
+                android:id="@+id/seekBar8"
+                android:layout_width="match_parent"
+                android:max="255"
+                android:progress="0"
+                android:layout_height="200dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <Button
+                        android:text="Clear all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnSingleClear" />
+
+                    <Button
+                        android:text="Black Out"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnSingleBO" />
+
+                    <Button
+                        android:text="Save Scene"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnSingleSave" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <Button
+                        android:text="Hi-light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnSingleHL" />
+
+                    <Button
+                        android:text="prev"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnSinglePrev" />
+
+                    <Button
+                        android:text="Next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnSingleNext" />
+                </TableRow>
+
+            </TableLayout>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/listaFader" />
+
+        </LinearLayout>
+    </LinearLayout>
+
 </LinearLayout>

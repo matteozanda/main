@@ -1,38 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="8dip">
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="37dp">
+        android:layout_weight="0.04"
+        android:layout_height="40dp">
 
         <TextView
             android:text=" 1"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/numFader"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:layout_width="30dp" />
 
         <SeekBar
-            android:layout_height="16dp"
+            android:layout_height="match_parent"
             android:id="@+id/fader"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:layout_width="230dp"
-            android:layout_gravity="center_vertical" />
+            android:layout_width="240dp"
+            android:layout_gravity="center_vertical"
+            android:paddingEnd="0dip"
+            android:paddingBottom="10dip"
+            android:max="255" />
 
         <TextView
             android:text="  0%"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/valFader"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="10dp" />
     </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
-        android:layout_height="62dp">
+        android:layout_height="wrap_content"
+        android:visibility="invisible">
 
         <TextView
             android:text="Nome Fader"
